@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>review</title>
+</head>
+<body>
+Review..
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit">
+{%if expenses%}
+    <h2>Your total amount till date is {{total.amount__sum}}</h2>
+      <table>
+        <tr>
+
+            <td>category</td>
+            <td>amount</td>
+            <td>date</td>
+            <td>note</td>
+
+
+        </tr>
+          {%for exp in expenses%}
+          <tr>
+              <td>{{exp.category}}</td>
+              <td>{{exp.amount}}</td>
+              <td>{{exp.date}}</td>
+              <td>{{exp.note}}</td>
+
+          </tr>
+          {%endfor%}
+      </table>
+{%endif%}
+</form>
+
+
+</body>
+</html>

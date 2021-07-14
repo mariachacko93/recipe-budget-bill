@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>booklist</title>
+</head>
+<body>
+
+<h2>booklist</h2>
+
+{%for acc in account%}
+    name:{{acc.personname}}
+    accno:{{acc.accno}}
+    acctype:{{acc.acctype}}
+    balance:{{acc.balance}}
+    mpin:{{acc.mpin}}
+<hr>
+    {%endfor%}
+
+
+
+</body>
+</html>
